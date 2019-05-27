@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  hello!
+</body>
+<script>
+    var a = 'sdfsdf';
+    var ws = new WebSocket("ws://127.0.0.1:8080");
+    ws.onopen = function (ev) {
+        ws.onmessage = function (data){
+            console.log(data.data);
+        }
+        ws.onerror = function(e){
+            console.log(e);
+        }
+        ws.send('zhiou');
+        ws.onclose = function(data){
+            console.log('close connection');
+        };
+    }
+
+
+</script>
+
+</html>
+
